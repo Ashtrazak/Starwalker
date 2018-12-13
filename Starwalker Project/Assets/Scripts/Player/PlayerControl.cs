@@ -34,7 +34,6 @@ public class PlayerControl : MonoBehaviour
                 deltaMove = clickPosition - _transform.position;
                 isMove = true;
             }
-            
         }
         else if (Input.GetMouseButton(0)) // Клик мыши
         {
