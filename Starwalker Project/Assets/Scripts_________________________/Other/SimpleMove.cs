@@ -1,25 +1,16 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public enum dir // Направление двжения
-{
-    left = -1,
-    right = 1,
-}
+﻿using UnityEngine;
 
 public class SimpleMove : MonoBehaviour
 {
     private Transform _transform;
 
-    [Header("Направление двжения")]
-    public dir direction = dir.left;
     [Header("Скорость перемещения")]
     [Range(10f, 10000f)]
     public float speed = 100;
     [Header("Угол относительно оси X")]
-    [Range(-90f, 90f)]
-    public float angle = 0;
+    [Tooltip("0 - горизонтально вправо")]
+    [Range(0f, 360f)]
+    public float angle = -90;
     [Header("Время жизни объекта")]
     [Range(0f, 300f)]
     public float timeToDestroy = 10;
@@ -33,6 +24,6 @@ public class SimpleMove : MonoBehaviour
 	
 	void FixedUpdate ()
     {
-        _transform.position += new Vector3((int)direction * speed * Mathf.Cos(angle * Mathf.PI / 180f) * Time.fixedDeltaTime, speed * Mathf.Sin(angle * Mathf.PI / 180f) * Time.deltaTime, 0f);
+        _transform.position += new Vector3(speed * Mathf.Cos(angle * Mathf.PI / 180f) * Time.fixedDeltaTime, speed * Mathf.Sin(angle * Mathf.PI / 180f) * Time.fixedDeltaTime, 0f);
     }
 }

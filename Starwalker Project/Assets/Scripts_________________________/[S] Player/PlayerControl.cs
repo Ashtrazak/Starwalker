@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerControl : MonoBehaviour
 {
@@ -46,6 +44,7 @@ public class PlayerControl : MonoBehaviour
         }
         else
             isMove = false;
+            
         // Плавное перемещение
         _transform.position = 
             Vector3.Lerp(_transform.position, 
