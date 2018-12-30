@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class PlayerControl : MonoBehaviour
+public class PlayerOptions : MonoBehaviour
 {
     private Transform _transform;
 

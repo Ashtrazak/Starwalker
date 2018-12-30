@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class SpawnerController : MonoBehaviour
+public class Spawner : MonoBehaviour
 {
     [Header("Глава")]
     [Range(1, 1)]

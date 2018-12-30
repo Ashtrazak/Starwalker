@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class BulletController : MonoBehaviour
+public class BulletOptions : MonoBehaviour
 {
     [Header("Наносимый урон")]
     [Range(1, 100)]
@@ -14,6 +14,6 @@ public class BulletController : MonoBehaviour
         if (collision.gameObject.tag != collisionTag) // Выбор множества целей по тэгу
             return;
 
-        collision.gameObject.GetComponent<EnemyController>().TakeDamage(damage); // Нанести цели урон
+        collision.gameObject.GetComponent<EnemyOptions>().TakeDamage(damage); // Нанести цели урон
     }
 }

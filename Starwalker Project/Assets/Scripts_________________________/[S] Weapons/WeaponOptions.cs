@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class WeaponController : MonoBehaviour
+public class WeaponOptions : MonoBehaviour
 {
     [Header("Набор снарядов Снаряд")]
     public GameObject[] bulletPref;

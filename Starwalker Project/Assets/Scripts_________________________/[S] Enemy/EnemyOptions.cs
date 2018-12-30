@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class EnemyController : MonoBehaviour
+public class EnemyOptions : MonoBehaviour
 {
     [Header("Здоровье")]
     [Range(1,1000)]
