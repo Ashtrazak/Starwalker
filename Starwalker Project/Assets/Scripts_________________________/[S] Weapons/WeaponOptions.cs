@@ -41,7 +41,7 @@ public class WeaponOptions : MonoBehaviour
 
                 bullet.GetComponent<SimpleMove>().speed = bulletSpeed[i];
                 bullet.GetComponent<SimpleMove>().angle = 90;
-                bullet.GetComponent<BulletController>().damage = bulletDamage[i];
+                bullet.GetComponent<BulletOptions>().damage = bulletDamage[i];
 
                 attackSpeedCounter[i] = 0f;
              }
