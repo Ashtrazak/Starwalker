@@ -14,6 +14,6 @@ public class BulletOptions : MonoBehaviour
         if (collision.gameObject.tag != collisionTag) // Выбор множества целей по тэгу
             return;
 
-        collision.gameObject.GetComponent<EnemyOptions>().TakeDamage(damage); // Нанести цели урон
+        collision.gameObject.GetComponent<EnemyBaseParameters>().TakeDamage(damage); // Нанести цели урон
     }
 }

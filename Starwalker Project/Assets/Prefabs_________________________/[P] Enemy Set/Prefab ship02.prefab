@@ -105,7 +105,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fde714ebe1ca1df409650769fa610778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: -1
   speed: 250
   angle: 0
   timeToDestroy: 300
