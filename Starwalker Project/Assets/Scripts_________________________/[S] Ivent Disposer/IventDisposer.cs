@@ -9,6 +9,10 @@ public class IventDisposer : MonoBehaviour
     [Header("Игровые события")]
     public GameObject[] ivent = new GameObject[5];
     //
+    [Header("Время отведённое на проведение соответствующего игрового события")]
+    [Range(0f, 25f)]
+    public float[] iventTime = new float[5];
+    //
     [Header("Порядок запуска игровых событий")]
     [Tooltip(   "0 - Пауза \n" + "1 - Вызвать боевую зону \n" + "2 - Вызвать препятствия \n" + "3 - Вызвать испытание \n" + "4 - Босс")]
     [Range(0, 4)]
@@ -18,22 +22,32 @@ public class IventDisposer : MonoBehaviour
     public bool loopIvents;
     //
     private GameObject curentIvent; // Текущее событие
-    private int iventGeneratorIndex; // Номер игрового события
+    private int iventIndex; // Номер игрового события
 
-    void Awake()
-    {
-    }
     void Start()
     {
-        //curentIventGenerator = iventGenerator[iventStack[iventGeneratorIndex++]].GetComponent<AreaController>().Spawn(); // Вызываем первую арену
+        SpawnIvent();
     }
     void Update ()
     {
-        /*
-        if (curentArea != null) // Если есть активная арена
+        if (curentIvent != null) // Если есть активная арена
             return;
-        if (arenaCounter < arenaStack.Length) // Пока ещё есть арены в очереди
-            curentArea = Areas[arenaStack[arenaCounter++]].GetComponent<AreaController>().Spawn();
-        */
+        if (iventIndex < iventSequence.Length) // Пока ещё есть арены в очереди
+            SpawnIvent();
+        else if (loopIvents) // Если порядок событий зациклен
+        {
+            iventIndex = 0;
+            SpawnIvent();
+        }
+    }
+
+    void SpawnIvent()
+    {
+        int iventType = iventSequence[iventIndex]; // Получаем тип события
+        curentIvent = Instantiate(ivent[iventType], transform.position, Quaternion.identity, transform); // Вызываем первую по списку арену
+        //curentIvent.transform.parent = transform; // Прикрепляем ивент к этому объекту
+        if (iventTime[iventType] != 0f) // (Для значения 0 арена не будет удалена по таймеру)
+            Destroy(curentIvent, iventTime[iventType]); // Устанавливаем таймер на ивент соответствующего типа
+        iventIndex++;
     }
 }

@@ -9,7 +9,7 @@ public class SimpleMove : MonoBehaviour
     public float speed = 100;
     [Header("Угол относительно оси X")]
     [Tooltip("0 - горизонтально вправо")]
-    [Range(0f, 360f)]
+    [Range(-360f, 360f)]
     public float angle = -90;
     [Header("Время жизни объекта")]
     [Range(0f, 300f)]
