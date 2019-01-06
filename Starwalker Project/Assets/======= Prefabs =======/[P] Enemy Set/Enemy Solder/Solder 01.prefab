@@ -163,6 +163,7 @@ PolygonCollider2D:
       - {x: -0.3117574, y: -0.148912}
       - {x: -0.23757638, y: -0.06667041}
       - {x: -0.11188262, y: -0.20418397}
+      - {x: -0.00022513581, y: -0.4024937}
       - {x: 0.10365127, y: -0.20485401}
       - {x: 0.24503647, y: -0.06823889}
       - {x: 0.3112991, y: -0.14468922}
@@ -231,6 +232,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HealthPointMax: 5
   isImmortal: 0
+  explosionPref: {fileID: 1653155787455600, guid: f7a99aeba9281c74f9a3b5856509f503,
+    type: 2}
 --- !u!212 &212445333603630392
 SpriteRenderer:
   m_ObjectHideFlags: 1

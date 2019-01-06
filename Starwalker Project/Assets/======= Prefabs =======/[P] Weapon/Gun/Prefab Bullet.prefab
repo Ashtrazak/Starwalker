@@ -71,7 +71,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   collisionTag: Enemy
-  effectPrefab: {fileID: 1219702636677820, guid: 3e6c32c907c41504d8bcea939a063b65,
+  effectPrefab: {fileID: 1586675490361602, guid: cfad72e3e12ea9d4187c3dd8241e0778,
     type: 2}
 --- !u!114 &114652283775046110
 MonoBehaviour:

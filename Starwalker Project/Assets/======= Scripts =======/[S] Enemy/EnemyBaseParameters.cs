@@ -9,7 +9,10 @@ public class EnemyBaseParameters : MonoBehaviour
     [Header("Невосприимчивость к урону")]
     public bool isImmortal = false;
 
-	void Awake ()
+    [Header("Взрыв при уничтожении")]
+    public GameObject explosionPref;
+
+    void Awake ()
     {
         HealthPoint = HealthPointMax;
     }
@@ -25,9 +28,13 @@ public class EnemyBaseParameters : MonoBehaviour
 
         HealthPoint -= damage;
         if (HealthPoint <= 0)
-            Destroy(gameObject);
+        {
+            Destroy(Instantiate(explosionPref, GetComponent<Transform>().position, Quaternion.identity), 0.5f);
+            Destroy(gameObject, 0.01f);
+            GetComponent<EnemyBaseParameters>().enabled = false;
+        }
 
-        VisualDamageReaction();
+        //VisualDamageReaction();
     }
     public void VisualDamageReaction() // Визуальная реакция на получение урона
     {
@@ -37,4 +44,6 @@ public class EnemyBaseParameters : MonoBehaviour
         else if ((float)(HealthPoint / HealthPointMax) < 66f)
                 SR.color = new Vector4(SR.color.r, SR.color.b * 0.70f, SR.color.g * 0.70f, SR.color.a);
     }
+
+
 }
