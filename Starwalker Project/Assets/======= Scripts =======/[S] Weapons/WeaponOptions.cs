@@ -40,7 +40,7 @@ public class WeaponOptions : MonoBehaviour
                 GameObject bullet = Instantiate(bulletPref[i], bulletPosition[i].position, Quaternion.identity); // Создаём снаряды в соответствующих точках
                 bullet.GetComponent<SimpleMove>().speed = bulletSpeed[i];
                 bullet.GetComponent<SimpleMove>().angle = 90;
-                bullet.GetComponent<ContactWithObject>().damage = bulletDamage[i];
+                bullet.GetComponent<DamageContactObject>().damage = bulletDamage[i];
 
                 attackSpeedCounter[i] = 0f;
              }

@@ -22,6 +22,8 @@ GameObject:
   - component: {fileID: 212843269648216474}
   - component: {fileID: 114861266842830830}
   - component: {fileID: 114234291626087636}
+  - component: {fileID: 114402743046201916}
+  - component: {fileID: 114333261074430248}
   - component: {fileID: 60566261095595890}
   - component: {fileID: 50703997231008292}
   m_Layer: 0
@@ -162,9 +164,9 @@ PolygonCollider2D:
       - {x: -0.33824262, y: -0.14958131}
       - {x: -0.3117574, y: -0.148912}
       - {x: -0.23757638, y: -0.06667041}
-      - {x: -0.11188262, y: -0.20418397}
-      - {x: -0.00022513581, y: -0.4024937}
-      - {x: 0.10365127, y: -0.20485401}
+      - {x: -0.12010302, y: -0.20966429}
+      - {x: -0.0057053952, y: -0.45181593}
+      - {x: 0.111871615, y: -0.20485401}
       - {x: 0.24503647, y: -0.06823889}
       - {x: 0.3112991, y: -0.14468922}
       - {x: 0.33870402, y: -0.14619203}
@@ -218,7 +220,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 600
   angle: -90
-  timeToDestroy: 300
+--- !u!114 &114333261074430248
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1295223624467874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faefe0bb29cc27f4aa8c9eec6d76e463, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeTime: 300
+--- !u!114 &114402743046201916
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1295223624467874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f43acc5b8b087442b5c75bd607637b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  collisionTag: Player
+  effectPrefab: {fileID: 1653155787455600, guid: f7a99aeba9281c74f9a3b5856509f503,
+    type: 2}
 --- !u!114 &114861266842830830
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -230,7 +258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf4e5a2dcf2829f44808793b74e0f740, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HealthPointMax: 5
+  healthPointMax: 3
   isImmortal: 0
   explosionPref: {fileID: 1653155787455600, guid: f7a99aeba9281c74f9a3b5856509f503,
     type: 2}

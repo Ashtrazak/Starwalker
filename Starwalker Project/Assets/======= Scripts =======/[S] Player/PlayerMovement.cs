@@ -1,13 +1,13 @@
 ﻿using UnityEngine;
 
-public class PlayerBaseParameters : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     private Transform _transform;
-
+    //
     [Header("Скорость перемещения")]
     [Range(1.5f, 10f)]
     public float speed;
-
+    //
     private bool isMove = false; // Состояние: "есть движение"/"нет движения"
     private Vector3 clickPosition; // Координаты точки касания к экрану
     private Vector3 deltaMove; // Расстояние от корабля до точки касания к экрану
@@ -45,11 +45,12 @@ public class PlayerBaseParameters : MonoBehaviour
         }
         else
             isMove = false;
-            
+
         // Плавное перемещение
-        _transform.position = 
-            Vector3.Lerp(_transform.position, 
+        _transform.position =
+            Vector3.Lerp(_transform.position,
             new Vector3(Mathf.Clamp(clickPosition.x - deltaMove.x, x1, x2), Mathf.Clamp(clickPosition.y - deltaMove.y, y1, y2), _transform.position.z),
-            speed*Time.deltaTime);
+            speed * Time.deltaTime);
     }
 }
+

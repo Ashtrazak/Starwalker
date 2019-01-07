@@ -11,18 +11,11 @@ public class SimpleMove : MonoBehaviour
     [Tooltip("0 - горизонтально вправо")]
     [Range(-360f, 360f)]
     public float angle = -90;
-    [Header("Время жизни объекта")]
-    [Range(0f, 300f)]
-    public float timeToDestroy = 10;
 
     void Awake ()
     {
         _transform = GetComponent<Transform>();
-        if (timeToDestroy>0)
-            Destroy(gameObject, timeToDestroy);
     }
-	
-
     void Update()
     {
         _transform.position += new Vector3(speed * Mathf.Cos(angle * Mathf.PI / 180f) * Time.deltaTime, speed * Mathf.Sin(angle * Mathf.PI / 180f) * Time.deltaTime, 0f);
