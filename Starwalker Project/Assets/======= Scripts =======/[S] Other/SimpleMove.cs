@@ -5,11 +5,11 @@ public class SimpleMove : MonoBehaviour
     private Transform _transform;
 
     [Header("Скорость перемещения")]
-    [Range(10f, 10000f)]
+    [Range(0f, 10000f)]
     public float speed = 100;
     [Header("Угол относительно оси X")]
     [Tooltip("0 - горизонтально вправо")]
-    [Range(-360f, 360f)]
+    [Range(0, 360f)]
     public float angle = -90;
 
     void Awake ()

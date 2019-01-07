@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114652283775046110}
   - component: {fileID: 70533873741105952}
   m_Layer: 0
-  m_Name: Prefab Bullet
+  m_Name: Gun Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -86,7 +86,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3000
   angle: 0
-  timeToDestroy: 5
 --- !u!212 &212424905268184034
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class WeaponOptions : MonoBehaviour
+public class RangeWeapon : MonoBehaviour
 {
     [Header("Набор снарядов Снаряд")]
     public GameObject[] bulletPref;
@@ -16,6 +16,10 @@ public class WeaponOptions : MonoBehaviour
     [Header("Скорость полёта каждого снаряда")]
     [Range(10f, 10000f)]
     public float[] bulletSpeed;
+
+    [Header("Угол полёта каждого снаряда")]
+    [Range(0, 360)]
+    public int[] bulletAngle;
 
     [Header("Урон каждого снаряда")]
     [Range(1, 100)]
@@ -37,9 +41,9 @@ public class WeaponOptions : MonoBehaviour
              else
              {
 
-                GameObject bullet = Instantiate(bulletPref[i], bulletPosition[i].position, Quaternion.identity); // Создаём снаряды в соответствующих точках
+                GameObject bullet = Instantiate(bulletPref[i], bulletPosition[i].position, bulletPref[i].transform.rotation); // Создаём снаряды в соответствующих точках
                 bullet.GetComponent<SimpleMove>().speed = bulletSpeed[i];
-                bullet.GetComponent<SimpleMove>().angle = 90;
+                bullet.GetComponent<SimpleMove>().angle = bulletAngle[i];
                 bullet.GetComponent<DamageContactObject>().damage = bulletDamage[i];
 
                 attackSpeedCounter[i] = 0f;

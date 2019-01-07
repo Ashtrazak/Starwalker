@@ -18,6 +18,10 @@ public class AreaBattle : MonoBehaviour
 
     void Spawn(int variant)
     {
-        Instantiate(EnemyContainer.GetSolder(), new Vector3(transform.position.x + Random.Range(-interval, interval), transform.position.y, transform.position.z), EnemyContainer.GetSolder().transform.rotation);
+        int temp = Random.Range(0, 10); 
+        if (temp < 3)
+            Instantiate(EnemyContainer.GetRanger(), new Vector3(transform.position.x + Random.Range(-interval, interval), transform.position.y, transform.position.z), EnemyContainer.GetSolder().transform.rotation);
+        else
+            Instantiate(EnemyContainer.GetSolder(), new Vector3(transform.position.x + Random.Range(-interval, interval), transform.position.y, transform.position.z), EnemyContainer.GetSolder().transform.rotation);
     }
 }
