@@ -18,7 +18,7 @@ public class DamageContactObject : MonoBehaviour
             return;
 
         if (collision.gameObject.tag == "Player")
-            collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(damage); // Нанести цели урон
+            collision.gameObject.GetComponent<PlayerController>().TakeDamage(damage); // Нанести цели урон
         else
             collision.gameObject.GetComponent<Health>().TakeDamage(damage); // Нанести цели урон
 

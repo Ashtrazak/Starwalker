@@ -5,22 +5,22 @@ public class IventDisposer : MonoBehaviour
     [Header("Глава")]
     [Range(1, 1)]
     public int chapter = 1;
-    //
+    
     [Header("Игровые события")]
     public GameObject[] ivent = new GameObject[5];
-    //
+    
     [Header("Время отведённое на проведение соответствующего игрового события")]
     [Range(0f, 25f)]
     public float[] iventTime = new float[5];
-    //
+    
     [Header("Порядок запуска игровых событий")]
     [Tooltip(   "0 - Пауза \n" + "1 - Вызвать боевую зону \n" + "2 - Вызвать препятствия \n" + "3 - Вызвать испытание \n" + "4 - Босс")]
     [Range(0, 4)]
     public int[] iventSequence;
-    //
+    
     [Header("Зациклить смену ивентов")]
     public bool loopIvents;
-    //
+    
     private GameObject curentIvent; // Текущее событие
     private int iventIndex; // Номер игрового события
 
